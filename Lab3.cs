@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace C_Sharp
 {
-    internal class Lab3
+     class Lab3
     {
         class MyClass
         {
@@ -83,7 +83,7 @@ namespace C_Sharp
         class MyClass4
         {
             int a, b;
-            internal MyClass(int a, int b)
+            internal MyClass4(int a, int b)
             {
                 this.a = a;
                 this.b = b;
@@ -96,7 +96,7 @@ namespace C_Sharp
         }
         public void Program4()
         {
-            DerivedClass d = new DevivedClass();
+            DerivedClass d = new DerivedClass();
             d.SetValue(1,2);
         }
         public void Program6()

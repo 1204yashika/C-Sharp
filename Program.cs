@@ -33,6 +33,16 @@ namespace C_Sharp
             lab2.Program8();
             lab2.Program9();
             lab2.Program10();
+            Lab3 lab3 = new Lab3();
+            lab3.Program1(); 
+            lab3.Program4();
+            lab3.Program6();
+            lab3.Program7();
+            lab3.Program8();
+            lab3.Program9();
+
+
+
         }
     }
 }
