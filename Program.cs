@@ -40,9 +40,13 @@ namespace C_Sharp
             lab3.Program7();
             lab3.Program8();
             lab3.Program9();
-
-
-
+            Lab4 lab4 = new Lab4();
+            lab4.Program1();
+            lab4.Program2(); 
+            lab4.Program3();
+            lab4.Program4();
+            lab4.Program5();
+            lab4.Program7();
         }
     }
 }
