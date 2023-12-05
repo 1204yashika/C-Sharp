@@ -4,189 +4,189 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace C_Sharp
-{
+namespace C_Sharp { 
+        public class Employee
+    {
+        public int age;
+        public string name;
+        public int salary;
+
+        public void getDetails()
+        {
+            Console.WriteLine("name: " + this.name);
+            Console.WriteLine("salary: " + this.salary);
+            Console.WriteLine("age: " + this.age);
+        }
+    }
+    public class BankAccount
+    {
+        public String name;
+        public int Account_no;
+        public double balance;
+
+        public void deposit(int amt)
+        {
+            balance += amt;
+        }
+
+        public void withdraw(int amt)
+        {
+            balance -= amt;
+        }
+
+        public void display()
+        {
+            Console.WriteLine(balance);
+        }
+    }
+    public static class MathHelper
+    {
+        public static double CalculateAverage(int[] arr)
+        {
+            int sum = 0;
+            for (int i = 0; i < arr.Length; i++) { sum += arr[i]; }
+            return sum / arr.Length;
+        }
+    }
+    public class Logger
+    {
+        public static void LogMessage()
+        {
+            Console.WriteLine("Hello!");
+        }
+    }
+    public abstract class Shape
+    {
+        public abstract double CalculateArea();
+    }
+    public class Circle : Shape
+    {
+        public double Radius;
+
+        public Circle(double radius)
+        {
+            Radius = radius;
+        }
+
+        public override double CalculateArea()
+        {
+            return Math.PI * Radius * Radius;
+        }
+    }
+    public class Rectangle : Shape
+    {
+        public double Width;
+        public double Height;
+
+        public Rectangle(double width, double height)
+        {
+            Width = width;
+            Height = height;
+        }
+
+        public override double CalculateArea()
+        {
+            return Width * Height;
+        }
+    }
+    public abstract class Animal
+    {
+        public string Name;
+        public int Age;
+
+
+        public abstract void MakeSound();
+    }
+
+    // Derived class for Dog
+    public class Dog : Animal
+    {
+
+        public Dog(String name, int age)
+        {
+            this.Name = name;
+            this.Age = age;
+        }
+        public override void MakeSound()
+        {
+            Console.WriteLine("Dog barks: Woof woof!");
+        }
+
+        public void Fetch()
+        {
+            Console.WriteLine("Dog fetches the ball.");
+        }
+    }
+
+    // Derived class for Cat
+    public class Cat : Animal
+    {
+        public Cat(String name, int age)
+        {
+            this.Name = name;
+            this.Age = age;
+        }
+
+        public override void MakeSound()
+        {
+            Console.WriteLine("Cat meows: Meow meow!");
+        }
+
+        public void Climb()
+        {
+            Console.WriteLine("Cat climbs a tree.");
+        }
+    }
+    public class Vehicle
+    {
+        public void StartEngine()
+        {
+            Console.WriteLine("Engine started.");
+        }
+
+        public void StopEngine()
+        {
+            Console.WriteLine("Engine stopped.");
+        }
+    }
+
+    public sealed class Car : Vehicle
+    {
+        // Additional properties and methods specific to Car can be added here
+    }
+   
+
+    class BankAccount2
+    {
+        public string AccountNumber { get; }
+        public double Balance { get; protected set; }
+
+        public BankAccount2(string accountNumber, double balance)
+        {
+            AccountNumber = accountNumber;
+            Balance = balance;
+        }
+    }
+
+    sealed class SavingsAccount : BankAccount2
+    {
+        public double InterestRate { get; }
+
+        public SavingsAccount(string accountNumber, double balance, double interestRate)
+            : base(accountNumber, balance)
+        {
+            InterestRate = interestRate;
+        }
+        public void CalculateInterest()
+        {
+            double interest = Balance * (InterestRate / 100);
+            Balance += interest;
+            Console.WriteLine($"Interest calculated: {interest:C}. New balance: {Balance:C}");
+        }
+    }
     internal class Lab2
     {
-        public class Employee
-        {
-            public int age;
-            public string name;
-            public int salary;
-
-            public void getDetails()
-            {
-                Console.WriteLine("name: " + this.name);
-                Console.WriteLine("salary: " + this.salary);
-                Console.WriteLine("age: " + this.age);
-            }
-        }
-        public class BankAccount
-        {
-            public String name;
-            public int Account_no;
-            public double balance;
-
-            public void deposit(int amt)
-            {
-                balance += amt;
-            }
-
-            public void withdraw(int amt)
-            {
-                balance -= amt;
-            }
-
-            public void display()
-            {
-                Console.WriteLine(balance);
-            }
-        }
-        public static class MathHelper
-        {
-            public static double CalculateAverage(int[] arr)
-            {
-                int sum = 0;
-                for (int i = 0; i < arr.Length; i++) { sum += arr[i]; }
-                return sum / arr.Length;
-            }
-        }
-        public class Logger
-        {
-            public static void LogMessage()
-            {
-                Console.WriteLine("Hello!");
-            }
-        }
-        public abstract class Shape
-        {
-            public abstract double CalculateArea();
-        }
-        public class Circle : Shape
-        {
-            public double Radius;
-
-            public Circle(double radius)
-            {
-                Radius = radius;
-            }
-
-            public override double CalculateArea()
-            {
-                return Math.PI * Radius * Radius;
-            }
-        }
-        public class Rectangle : Shape
-        {
-            public double Width;
-            public double Height;
-
-            public Rectangle(double width, double height)
-            {
-                Width = width;
-                Height = height;
-            }
-
-            public override double CalculateArea()
-            {
-                return Width * Height;
-            }
-        }
-        public abstract class Animal
-        {
-            public string Name;
-            public int Age;
-
-
-            public abstract void MakeSound();
-        }
-
-        // Derived class for Dog
-        public class Dog : Animal
-        {
-            
-            public Dog(String name, int age)
-            {
-                this.Name = name;
-                this.Age = age;
-            }
-            public override void MakeSound()
-            {
-                Console.WriteLine("Dog barks: Woof woof!");
-            }
-
-            public void Fetch()
-            {
-                Console.WriteLine("Dog fetches the ball.");
-            }
-        }
-
-        // Derived class for Cat
-        public class Cat : Animal
-        {
-            public Cat(String name, int age)
-            {
-                this.Name = name;
-                this.Age = age;
-            }
-
-            public override void MakeSound()
-            {
-                Console.WriteLine("Cat meows: Meow meow!");
-            }
-
-            public void Climb()
-            {
-                Console.WriteLine("Cat climbs a tree.");
-            }
-        }
-        public class Vehicle
-        {
-            public void StartEngine()
-            {
-                Console.WriteLine("Engine started.");
-            }
-
-            public void StopEngine()
-            {
-                Console.WriteLine("Engine stopped.");
-            }
-        }
-
-        public sealed class Car : Vehicle
-        {
-            // Additional properties and methods specific to Car can be added here
-        }
-
-        class BankAccount2
-        {
-            public string AccountNumber { get; }
-            public double Balance { get; protected set; }
-
-            public BankAccount2(string accountNumber, double balance)
-            {
-                AccountNumber = accountNumber;
-                Balance = balance;
-            }
-        }
-
-        sealed class SavingsAccount : BankAccount2
-        {
-            public double InterestRate { get; }
-
-            public SavingsAccount(string accountNumber, double balance, double interestRate)
-                : base(accountNumber, balance)
-            {
-                InterestRate = interestRate;
-            }
-
-            public void CalculateInterest()
-            {
-                double interest = Balance * (InterestRate / 100);
-                Balance += interest;
-                Console.WriteLine($"Interest calculated: {interest:C}. New balance: {Balance:C}");
-            }
-        }
+        
 
 
         public void Program1()
@@ -209,6 +209,7 @@ namespace C_Sharp
         }
         public void Program3()
         {
+ 
             Console.WriteLine(MathHelper.CalculateAverage(new int[] { 1, 2, 3, 4, 5, }));
         }
         public void Program4()

@@ -54,7 +54,6 @@ namespace C_Sharp
         public void program4()
         {
             int[] arr = new int[] { 10, 20, 30, 22, 9, 15 };
-            int sum = 0;
             int evenCount = 0;
             int oddCount = 0;
 

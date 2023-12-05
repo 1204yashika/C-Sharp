@@ -59,7 +59,7 @@ namespace C_Sharp
         {
             private void PrintHello()
             {
-                Console.WriteLine("Hello World...")
+                Console.WriteLine("Hello World...");
             }
             public void AccessPublic()
             {
